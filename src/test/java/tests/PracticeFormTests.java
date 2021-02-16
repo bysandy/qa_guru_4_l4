@@ -20,6 +20,7 @@ public class PracticeFormTests extends TestBase {
     String state = "NCR";
     String city = "Gurgaon";
     String subject = "Chemistry";
+
     @Test
     void dataAppearsInForm() {
         open("https://demoqa.com/automation-practice-form");
@@ -43,7 +44,7 @@ public class PracticeFormTests extends TestBase {
         $("#hobbies-checkbox-2").click(ClickOptions.usingJavaScript());
         $("#hobbies-checkbox-3").click(ClickOptions.usingJavaScript());
         // Image upload from local drive
-        $("#uploadPicture").uploadFile(new File("src/resourses/IMG_1285.jpg"));
+        $("#uploadPicture").uploadFile(new File("src/test/resourses/IMG_1285.jpg"));
         // Set Address and State
         $("#currentAddress").setValue("Very very long address for this test");
         $("#react-select-3-input").val(state).pressEnter();

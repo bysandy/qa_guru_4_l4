@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.ClickOptions;
 import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +21,7 @@ public class PracticeFormTestJavaFaker extends TestBase {
         String lastName = faker.name().lastName();
         String email = faker.internet().emailAddress();
         String phone = getRandomPhone();
-        String gender =  "Male";
+        String gender = "Male";
         String month = "May";
         String year = "1977";
         String day = "13";
@@ -47,7 +46,7 @@ public class PracticeFormTestJavaFaker extends TestBase {
         $("#dateOfBirthInput").clear();
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__month-select").selectOption(month);
-        $(".react-datepicker__day.react-datepicker__day--0"+day).click();
+        $(".react-datepicker__day.react-datepicker__day--0" + day).click();
         // Set Subject
         $("#subjectsInput").val(subject);
         $(".subjects-auto-complete__menu-list").$(byText(subject)).click();
@@ -56,7 +55,7 @@ public class PracticeFormTestJavaFaker extends TestBase {
         $("#hobbiesWrapper").$(byText(hobby2)).click();
         $("#hobbiesWrapper").$(byText(hobby3)).click();
         // Image upload from local drive
-        $("#uploadPicture").uploadFile(new File("src/resourses/IMG_1285.jpg"));
+        $("#uploadPicture").uploadFile(new File("src/test/resourses/IMG_1285.jpg"));
         // Set Address and State
         $("#currentAddress").setValue(currentAddress);
         $("#state").click();

@@ -1,6 +1,5 @@
 package tests;
 
-import com.codeborne.selenide.ClickOptions;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -27,6 +26,7 @@ public class PracticeFormTestsRandomUtils extends TestBase {
     String state = "NCR";
     String city = "Gurgaon";
     String subject = "Chemistry";
+
     @Test
     void dataAppearsInForm() {
         open("https://demoqa.com/automation-practice-form");
@@ -42,7 +42,7 @@ public class PracticeFormTestsRandomUtils extends TestBase {
         $("#dateOfBirthInput").clear();
         $(".react-datepicker__year-select").selectOption(year);
         $(".react-datepicker__month-select").selectOption(month);
-        $(".react-datepicker__day.react-datepicker__day--0"+day).click();
+        $(".react-datepicker__day.react-datepicker__day--0" + day).click();
         // Set Subject
         $("#subjectsInput").val(subject);
         $(".subjects-auto-complete__menu-list").$(byText(subject)).click();
@@ -51,7 +51,7 @@ public class PracticeFormTestsRandomUtils extends TestBase {
         $("#hobbiesWrapper").$(byText(hobby2)).click();
         $("#hobbiesWrapper").$(byText(hobby3)).click();
         // Image upload from local drive
-        $("#uploadPicture").uploadFile(new File("src/resourses/IMG_1285.jpg"));
+        $("#uploadPicture").uploadFile(new File("src/test/resourses/IMG_1285.jpg"));
         // Set Address and State
         $("#currentAddress").setValue(currentAddress);
         $("#state").click();
